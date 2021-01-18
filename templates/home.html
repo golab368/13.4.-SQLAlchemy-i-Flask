@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% block content %}
+<h1 style="text-align:center">Welcome in home library CRUD</h1><br><br>
+
+{% for value in values_in_library %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Author</th>
+            <th scope="col">Book</th>
+            <th scope="col">Availability</th>
+            <th scope="col">Add</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{value.id}}</th>
+            <td>{{value.author}}</td>
+            <td>{{value.book}}</td>
+            <td>{{value.availability}}</td>
+            <td><a href="addrec/{{value.id}}" class="btn btn-outline-secondary btn-sm">Add</a></td>
+            <td><a href="update/{{value.id}}" class="btn btn-outline-secondary btn-sm">Update</a></td>
+            <td><a href="delete/{{value.id}}" class="btn btn-outline-secondary btn-sm">Delete</a></td>
+        </tr>
+
+    </tbody>
+</table>
+
+{% endfor %}
+
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<h1>Update record in library</h1><br><br>
+<form action="/update/{{library_to_update.id}}" method="POST">
+    <div class="container">
+        <div class="input-group mb-3">
+
+            <span class="input-group-text" id="inputGroup-sizing-default">Id</span>
+            <input value="{{library_to_update.id}}" name="id" type="integer" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+            <span class="input-group-text" id="inputGroup-sizing-default">Author</span>
+            <input value="{{library_to_update.author}}" name="author" type="text" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+            <span class="input-group-text" id="inputGroup-sizing-default">Book</span>
+            <input value="{{library_to_update.book}}" name="book" type="text" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+            <span class="input-group-text" id="inputGroup-sizing-default">Availability</span>
+            <input value="{{library_to_update.availability}}" name="availability" type="text" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+        </div>
+        <input type="submit" value="submit" class="btn btn-secondary">
+    </div>
+</form>
+
+{% endblock %}

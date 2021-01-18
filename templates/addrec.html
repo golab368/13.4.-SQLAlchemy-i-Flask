@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+
+<h1>Add data to library</h1><br><br>
+<form action="/addrec" method="POST">
+  <div class="container">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Author</span>
+      <input name="author" type="text" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default">
+
+      <span class="input-group-text" id="inputGroup-sizing-default">Book</span>
+      <input name="book" type="text" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default">
+
+      <span class="input-group-text" id="inputGroup-sizing-default">Availability</span>
+      <input name="availability" type="text" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default">
+
+    </div>
+    <input type="submit" value="submit" class="btn btn-secondary">
+  </div>
+</form>
+<br><br><br>
+{% for value in values_in_library %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Author</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{value.id}}</th>
+      <td>{{value.author}}</td>
+      <td>{{value.book}}</td>
+      <td>{{value.availability}}</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+{% endfor %}
+
+{% endblock %}
